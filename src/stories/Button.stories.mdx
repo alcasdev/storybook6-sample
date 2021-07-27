@@ -1,0 +1,47 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+import { Button } from './Button';
+
+<Meta title="Example/Button MDX" 
+  component={Button} 
+  argTypes={{
+    backgroundColor: { control: 'color' },
+    onClick: { action: 'clicked' }
+  }}
+/>
+
+# Example / Button MDX
+Here's how it looks Button component.
+
+<Canvas>
+    <Story name="Primary"
+        args={{
+          backgroundColor: '!hex(1ea7fd)',
+          primary: true,
+          label: 'Button',
+        }}>
+        {(args) => <Button {...args} />}
+    </Story>
+    <Story name="Secondary"
+        args={{
+          backgroundColor: '!hex(00000000)',
+          label: 'Button',
+        }}>
+        {(args) => <Button {...args} />}
+    </Story>
+    <Story name="Large"
+        args={{
+          backgroundColor: '!hex(00000000)',
+          size: 'large',
+          label: 'Button',
+        }}>
+        {(args) => <Button {...args} />}
+    </Story>
+    <Story name="Small"
+        args={{
+          backgroundColor: '!hex(00000000)',
+          size: 'small',
+          label: 'Button',
+        }}>
+        {(args) => <Button {...args} />}
+    </Story>
+</Canvas>
